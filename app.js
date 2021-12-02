@@ -37,3 +37,5 @@ yargs.command({
     console.log('Listing all notes!');
   }
 });
+
+yargs.argv;
