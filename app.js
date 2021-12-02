@@ -19,3 +19,12 @@ yargs.command({
     console.log('Removing a note!');
   }
 });
+
+// Create read command
+yargs.command({
+  command: 'read',
+  describe: 'Read a note',
+  handler: function () {
+    console.log('Reading a note!');
+  }
+});
