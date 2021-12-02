@@ -28,3 +28,12 @@ yargs.command({
     console.log('Reading a note!');
   }
 });
+
+// Create list command
+yargs.command({
+  command: 'list',
+  describe: 'List all notes',
+  handler: function () {
+    console.log('Listing all notes!');
+  }
+});
