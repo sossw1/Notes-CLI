@@ -1,8 +1,12 @@
 const fs = require('fs');
 
 function addNote(title, body) {
-  console.log('Title: ', title);
-  console.log('Body: ', body);
+  const notes = loadNotes();
+  notes.push({
+    title: title,
+    body: body
+  });
+  console.log('Adding note: ', { title, body });
 }
 
 function loadNotes() {
