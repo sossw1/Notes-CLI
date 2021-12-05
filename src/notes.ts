@@ -11,9 +11,17 @@ function addNote(title: string, body: string): void {
     title: title,
     body: body
   }
-  notes.push(newNote);
-  console.log('Adding note: ', newNote);
-  saveNotes(notes);
+  const duplicateNotes = notes.filter((note) => {
+    return note.title === title;
+  });
+
+  if(duplicateNotes.length === 0) {
+    notes.push(newNote);
+    console.log('Adding note: ', newNote);
+    saveNotes(notes);
+  } else {
+    console.log('Note title already exists')
+  }
 }
 
 function saveNotes(notes: Array<Note>): void {
