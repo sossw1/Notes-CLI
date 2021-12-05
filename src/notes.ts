@@ -1,4 +1,5 @@
 import * as fs from 'fs';
+import chalk from 'chalk';
 
 interface Note {
   title: string;
@@ -17,10 +18,10 @@ function addNote(title: string, body: string): void {
 
   if (duplicateNotes.length === 0) {
     notes.push(newNote);
-    console.log('Adding note: ', newNote);
+    console.log(chalk.green(`Adding note: { "${title}", "${body}" }`));
     saveNotes(notes);
   } else {
-    console.log('Note title already exists');
+    console.log(chalk.red('Note title already exists'));
   }
 }
 
@@ -30,13 +31,13 @@ function deleteNote(title: string): void {
   notes.forEach((note, index) => {
     if (note.title === title) {
       itemExists = true;
-      console.log('Deleting note: ', note);
+      console.log(chalk.green(`Deleting note: { "${note.title}", "${note.body}" }`));
       notes.splice(index, 1);
       saveNotes(notes);
     }
   });
   if (!itemExists) {
-    console.log('No note with this title exists');
+    console.log(chalk.red('No note with this title exists'));
   }
 }
 
