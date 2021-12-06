@@ -42,6 +42,14 @@ const deleteNote = (title: string): void => {
   }
 };
 
+const listNotes = (): void => {
+  const notes = loadNotes();
+  console.log(chalk.white.inverse('Your notes:'));
+  notes.forEach((note) => {
+    console.log(note.title);
+  });
+};
+
 const saveNotes = (notes: Array<Note>): void => {
   const dataJSON = JSON.stringify(notes);
   fs.writeFileSync('notes.json', dataJSON);
@@ -61,5 +69,6 @@ const loadNotes = (): Array<Note> => {
 export default {
   addNote,
   loadNotes,
-  deleteNote
+  deleteNote,
+  listNotes
 };
