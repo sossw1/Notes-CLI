@@ -79,7 +79,6 @@ const loadNotes = (): Array<Note> => {
 
 export default {
   addNote,
-  loadNotes,
   deleteNote,
   listNotes,
   readNote
