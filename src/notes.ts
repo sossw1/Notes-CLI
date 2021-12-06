@@ -12,8 +12,8 @@ const addNote = (title: string, body: string): void => {
     title: title,
     body: body
   };
-  const duplicateNotes = notes.filter((note) => note.title === title);
-  if (!duplicateNotes.length) {
+  const duplicateNote = notes.find((note) => note.title === title);
+  if (!duplicateNote) {
     notes.push(newNote);
     console.log(chalk.green.inverse(`Adding note: { "${title}", "${body}" }`));
     saveNotes(notes);
