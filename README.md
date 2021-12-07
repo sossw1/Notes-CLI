@@ -27,18 +27,18 @@ To generate the JavaScript files needed to run the program, run the TypeScript c
 tsc
 ```
 
-The generated files should appear in the `built/` directory.
+The generated files should appear in the root directory.
 
 ## Usage
 
-In command line, use `node built/app.js --help` to reference all available commands, or append the `--help` flag to any command to see usage info.
+In command line, use `node app.js --help` to reference all available commands, or append the `--help` flag to any command to see usage info.
 
 ### Adding a Note
 
 Parameters: title (string), body (string)
 
 ```
-node built/app.js add --title="My First Note" --body="This is great!"
+node app.js add --title="My First Note" --body="This is great!"
 ```
 
 ### Reading a Note
@@ -46,7 +46,7 @@ node built/app.js add --title="My First Note" --body="This is great!"
 Parameters: title (string)
 
 ```
-node built/app.js read --title="My First Note"
+node app.js read --title="My First Note"
 ```
 
 ### Listing all Notes
@@ -54,7 +54,7 @@ node built/app.js read --title="My First Note"
 Parameters: none
 
 ```
-node built/app.js list
+node app.js list
 ```
 
 ### Deleting a Note
@@ -62,17 +62,7 @@ node built/app.js list
 Parameters: title (string)
 
 ```
-node built/app.js delete --title="My First Note"
-```
-
-### Tip
-
-Any command may be run with `npm start -- ` instead of `node built/app.js`, followed by any commands and parameters.
-
-Ex:
-
-```
-npm start -- read --title="My First Note"
+node app.js delete --title="My First Note"
 ```
 
 ## License

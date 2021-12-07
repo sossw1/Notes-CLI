@@ -1,6 +1,6 @@
 {
   "compilerOptions": {
-    "outDir": "./built",
+    "outDir": "",
     "allowJs": true,
     "target": "es5",
     "types": ["node"]
